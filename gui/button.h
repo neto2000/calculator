@@ -6,23 +6,18 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 
-class Button {
+#include "gui_component.h"
+
+class Button: public GuiComponent {
 
 private:
 
-	int y;
-
-	int height;
-	int width;
-	
-	SDL_FRect button;
 public:
 
-	int x;
+	using GuiComponent::GuiComponent;
+	// Button(int cx, int cy, int cwidth, int cheight);
 
-	Button(int cx, int cy, int cwidth, int cheight);
-
-	void render(SDL_Renderer *renderer);
+	// void render(SDL_Renderer *renderer);
 
 	bool is_on_button(int mx, int my);
 };
