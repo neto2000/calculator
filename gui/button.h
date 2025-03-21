@@ -15,9 +15,8 @@ private:
 public:
 
 	using GuiComponent::GuiComponent;
-	// Button(int cx, int cy, int cwidth, int cheight);
-
-	// void render(SDL_Renderer *renderer);
 
 	bool is_on_button(int mx, int my);
+
+	void execute_button();
 };

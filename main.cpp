@@ -70,7 +70,8 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
         SDL_GetMouseState(&x, &y);
 
         if (state.test->is_on_button(static_cast<int>(x), static_cast<int>(y))) {
-            std::cout << "Button clicked!\n";
+
+            state.test->execute_button();
         }
     }
 
