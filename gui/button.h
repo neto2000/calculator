@@ -10,13 +10,19 @@ class Button {
 
 private:
 
-	std::string m_msg;
+	int y;
 
+	int height;
+	int width;
+	
+	SDL_FRect button;
 public:
 
-	Button(std::string msg);
+	int x;
 
-	
-	void print();
+	Button(int cx, int cy, int cwidth, int cheight);
 
+	void render(SDL_Renderer *renderer);
+
+	bool is_on_button(int mx, int my);
 };
