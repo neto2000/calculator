@@ -11,12 +11,16 @@
 class Button: public GuiComponent {
 
 private:
+	
 
 public:
-
-	using GuiComponent::GuiComponent;
+	
+	Button(int cvalue, int cx, int cy, int cwidth, int cheight);
 
 	bool is_on_button(int mx, int my);
 
 	void execute_button();
+	
+
+	int value;
 };

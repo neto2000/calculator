@@ -20,7 +20,6 @@ namespace {
         SDL_Window *window{nullptr};
         SDL_Renderer *renderer{nullptr};
         
-        Button *test{nullptr};
         
         std::vector<Button*>* buttons{nullptr};
     };
@@ -47,7 +46,6 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
 
 
 
-    state.test = new Button(0, 0, 50, 50);
 
     Structure structure = Structure();
 
@@ -73,11 +71,6 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 
         SDL_GetMouseState(&x, &y);
 
-        if (state.test->is_on_button(static_cast<int>(x), static_cast<int>(y))) {
-
-            state.test->execute_button();
-        }
-
             
         for (int i = 0; i < state.buttons->size(); i++) {
 
@@ -97,8 +90,6 @@ SDL_AppResult SDL_AppIterate(void *appstate) {
     AppState& state = *static_cast<AppState*>(appstate);
     
 
-    state.test->render(state.renderer);
-
 
     for (int i = 0; i < state.buttons->size(); i++) {
 
@@ -114,7 +105,6 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
     AppState& state = *static_cast<AppState*>(appstate);
 
-    delete state.test;
 
     for (int i = 0; i < state.buttons->size(); i++) {
 

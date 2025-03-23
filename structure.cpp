@@ -5,9 +5,9 @@ Structure::Structure() {
 
     buttons = new std::vector<Button*>;
 
-    buttons->push_back(new Button(100, 100, 50, 50));
+    buttons->push_back(new Button(3, 100, 100, 50, 50));
 
-    buttons->push_back(new Button(160, 100, 50, 50));
+    buttons->push_back(new Button(5, 160, 100, 50, 50));
 }
 
 

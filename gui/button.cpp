@@ -1,5 +1,10 @@
 #include "button.h"
 
+Button::Button(int cvalue, int cx, int cy, int cwidth, int cheight) : GuiComponent(cx, cy, cwidth, cheight) {
+    
+
+    value = cvalue;
+}
 
 bool Button::is_on_button(int mx, int my) {
     
@@ -17,7 +22,7 @@ bool Button::is_on_button(int mx, int my) {
 
 void Button::execute_button() {
 
-    std::cout << "Button clicked!\n";
+    std::cout << value << std::endl;
 }
 
 
