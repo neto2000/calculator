@@ -21,7 +21,16 @@ GuiComponent::GuiComponent(int cx, int cy, int cwidth, int cheight) {
 void GuiComponent::render(SDL_Renderer *renderer) {
 
 
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);  /* red, full alpha */
-    SDL_RenderRect(renderer, &outline);
+    SDL_Texture* img = IMG_LoadTexture(renderer, "../textures/normal_button.png");
+
+    SDL_SetTextureScaleMode(img, SDL_SCALEMODE_NEAREST);
+
+    if (img == NULL) {
+        std::cout << "FUCK\n";
+    }
+
+    SDL_RenderTexture(renderer, img, NULL, &outline);
+
+    // delete img;
 
 }
