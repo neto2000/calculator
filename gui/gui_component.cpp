@@ -1,13 +1,13 @@
 #include "gui_component.h"
 
-GuiComponent::GuiComponent(int cx, int cy, int cwidth, int cheight) {
+GuiComponent::GuiComponent(const char* cimage_path, int cx, int cy, int cwidth, int cheight) {
 
     x = cx;
     y = cy;
     width = cwidth;
     height = cheight;
 
-
+    image_path = cimage_path; 
 
 
     outline.x = x;
@@ -21,7 +21,7 @@ GuiComponent::GuiComponent(int cx, int cy, int cwidth, int cheight) {
 void GuiComponent::render(SDL_Renderer *renderer) {
 
 
-    SDL_Texture* img = IMG_LoadTexture(renderer, "../textures/normal_button.png");
+    SDL_Texture* img = IMG_LoadTexture(renderer, image_path);
 
     SDL_SetTextureScaleMode(img, SDL_SCALEMODE_NEAREST);
 

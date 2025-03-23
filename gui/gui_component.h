@@ -10,7 +10,8 @@
 class GuiComponent {
 
 private:
-
+	
+	const char* image_path;
 	
 public:
 	
@@ -22,7 +23,7 @@ public:
 
 	SDL_FRect outline;
 
-	GuiComponent(int cx, int cy, int cwidth, int cheight);
+	GuiComponent(const char* cimage_path, int cx, int cy, int cwidth, int cheight);
 
 	void render(SDL_Renderer *renderer);
 

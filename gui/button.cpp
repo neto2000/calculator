@@ -1,7 +1,6 @@
 #include "button.h"
 
-Button::Button(int cvalue, int cx, int cy, int cwidth, int cheight) : GuiComponent(cx, cy, cwidth, cheight) {
-    
+Button::Button(int cvalue, int cx, int cy, int cwidth, int cheight) : GuiComponent("../textures/normal_button.png", cx, cy, cwidth, cheight) {
 
     value = cvalue;
 }
