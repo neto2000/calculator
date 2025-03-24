@@ -11,7 +11,6 @@ class GuiComponent {
 
 private:
 	
-	const char* image_path;
 	
 public:
 	
@@ -22,6 +21,8 @@ public:
 	int width;
 
 	SDL_FRect outline;
+
+	const char* image_path;
 
 	GuiComponent(const char* cimage_path, int cx, int cy, int cwidth, int cheight);
 

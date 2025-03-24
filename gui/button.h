@@ -21,6 +21,7 @@ public:
 
 	void execute_button();
 	
+	void render(SDL_Renderer *renderer);
 
 	int value;
 };
