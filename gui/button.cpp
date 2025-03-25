@@ -1,4 +1,5 @@
 #include "button.h"
+#include <SDL3/SDL_render.h>
 
 Button::Button(int cvalue, int cx, int cy, int cwidth, int cheight) : GuiComponent("../textures/normal_button.png", cx, cy, cwidth, cheight) {
 
@@ -38,8 +39,8 @@ void Button::render(SDL_Renderer *renderer) {
 
     SDL_RenderTexture(renderer, img, NULL, &outline);
 
-    // delete img;
-    //
+    SDL_DestroyTexture(img);
+
 
     std::string number_path = std::string("../textures/characters/") + std::to_string(value) + ".png";
 
@@ -48,4 +49,6 @@ void Button::render(SDL_Renderer *renderer) {
     SDL_SetTextureScaleMode(number, SDL_SCALEMODE_NEAREST);
     
     SDL_RenderTexture(renderer, number, NULL, &outline);
+
+    SDL_DestroyTexture(number);
 }

@@ -1,3 +1,4 @@
+#include <ostream>
 #define SDL_MAIN_USE_CALLBACKS 1
 
 #include <iostream>
@@ -90,7 +91,6 @@ SDL_AppResult SDL_AppIterate(void *appstate) {
     
     AppState& state = *static_cast<AppState*>(appstate);
     
-
 
     for (int i = 0; i < state.buttons->size(); i++) {
 
