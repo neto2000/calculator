@@ -1,3 +1,4 @@
+#include <SDL3/SDL_events.h>
 #include <ostream>
 #define SDL_MAIN_USE_CALLBACKS 1
 
@@ -81,6 +82,15 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
                 state.buttons->at(i)->execute_button();
             }
         }
+    }
+
+    if (event->type == SDL_EVENT_KEY_DOWN) {
+
+        if (event->key.scancode == SDL_SCANCODE_1) {
+
+            std::cout << "one\n";
+        }
+
     }
 
     return SDL_APP_CONTINUE;  /* carry on with the program! */
