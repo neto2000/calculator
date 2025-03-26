@@ -83,7 +83,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 
             if (state.buttons->at(i)->is_on_button(static_cast<int>(x), static_cast<int>(y))) {
 
-                state.buttons->at(i)->execute_button();
+                state.buttons->at(i)->execute_button(state.display);
             }
         }
     }

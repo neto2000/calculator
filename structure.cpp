@@ -23,7 +23,7 @@ Structure::Structure() {
     for(int i = 1; i <= 9; i++) {
 
 
-        buttons->push_back(new Button(i, x, y, size, size));
+        buttons->push_back(new Button(SDL_Scancode(i+29), x, y, size, size));
         
 
         if (i % 3 == 0) {
