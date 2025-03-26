@@ -1,4 +1,6 @@
 #include "structure.h"
+#include "gui/display.h"
+#include <SDL3/SDL_scancode.h>
 
 
 Structure::Structure() {
@@ -36,15 +38,21 @@ Structure::Structure() {
         x = x + size + distance;
 
     }
+    
+    display = new Display(100, 20, 170, 80);
 
+    display->add_char(SDL_SCANCODE_4);
+    display->add_char(SDL_SCANCODE_2);
 
-    // buttons->push_back(new Button(3, 100, 100, 50, 50));
-    //
-    // buttons->push_back(new Button(5, 160, 100, 50, 50));
 }
 
 
 std::vector<Button*>* Structure::get_buttons() {
 
     return buttons;
+}
+
+Display* Structure::get_display() {
+
+    return display;
 }
