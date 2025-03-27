@@ -44,6 +44,8 @@ Structure::Structure() {
     display->add_char(SDL_SCANCODE_4);
     display->add_char(SDL_SCANCODE_2);
 
+    display->result = 42;
+
 }
 
 

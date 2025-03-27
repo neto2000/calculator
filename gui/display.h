@@ -20,6 +20,8 @@ class Display : public GuiComponent{
 
 private:
 
+	void display_result(SDL_Renderer *renderer);
+
 	std::vector<SDL_Scancode> characters;
 
 	int char_distance;
@@ -37,8 +39,14 @@ public:
 	void remove_last_char();
 
 	void clear();
+
 	
 	void render(SDL_Renderer *renderer);
+
+
+	int result;
+
+	bool result_is_negative;
 
 	
 };
