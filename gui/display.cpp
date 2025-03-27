@@ -18,6 +18,22 @@ void Display::add_char(SDL_Scancode character) {
     characters.push_back(character);
 }
 
+void Display::remove_last_char() {
+
+    if (characters.size() < 1) {
+
+        return;
+    }
+
+    characters.pop_back();
+
+}
+
+void Display::clear() {
+
+    characters.clear();
+}
+
 void Display::render(SDL_Renderer *renderer) {
 
 
@@ -30,9 +46,21 @@ void Display::render(SDL_Renderer *renderer) {
     SDL_DestroyTexture(background);
 
     int char_x = x + offset_x; 
-    int char_y = y + offset_y; 
+    int char_y = y + offset_y;
 
-    for (int i = 0; i < characters.size(); i++) {
+    int char_width = (width - offset_x) / (char_size + char_distance);
+
+
+
+
+    int start_char = 0;
+
+    if (characters.size() > char_width) {
+
+        start_char = characters.size() - char_width;
+    }
+
+    for (int i = start_char; i < characters.size(); i++) {
 
         SDL_FRect box;
 

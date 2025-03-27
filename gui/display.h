@@ -33,6 +33,10 @@ public:
 	Display(int cx, int cy, int cwidth, int cheight);	
 
 	void add_char(SDL_Scancode character);
+
+	void remove_last_char();
+
+	void clear();
 	
 	void render(SDL_Renderer *renderer);
 

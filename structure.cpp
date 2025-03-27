@@ -12,7 +12,7 @@ Structure::Structure() {
     int distance = 10;
 
     int x_start = 100;
-    int y_start = 100;
+    int y_start = 170;
 
 
 
@@ -39,7 +39,7 @@ Structure::Structure() {
 
     }
     
-    display = new Display(100, 20, 170, 80);
+    display = new Display(100, 20, 170, 150);
 
     display->add_char(SDL_SCANCODE_4);
     display->add_char(SDL_SCANCODE_2);

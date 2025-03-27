@@ -1,4 +1,6 @@
 #include <SDL3/SDL_events.h>
+#include <SDL3/SDL_init.h>
+#include <SDL3/SDL_scancode.h>
 #include <ostream>
 #define SDL_MAIN_USE_CALLBACKS 1
 
@@ -90,9 +92,12 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 
     if (event->type == SDL_EVENT_KEY_DOWN) {
 
-        if (event->key.scancode == SDL_SCANCODE_1) {
 
-            std::cout << "one\n";
+        if (event->key.scancode == SDL_SCANCODE_BACKSPACE) {
+
+            state.display->remove_last_char();
+
+            return SDL_APP_CONTINUE;
         }
 
         state.display->add_char(event->key.scancode);
